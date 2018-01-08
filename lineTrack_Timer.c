@@ -22,24 +22,6 @@ void lightMove(){
 
 }
 
-void touchMove(){
-	motor[motorC] = 0;
-	motor[motorB] = 0;
-
-	wait1Msec(500);
-
-	//Multiplied by negative 1 to go backwards
-	motor[motorC] = speed *-1;
-	motor[motorB] = speed *-1;
-	wait1Msec(1000);
-
-	//Multiplied by .5 to go half speed
-	motor[motorC] = speed;
-	motor[motorB] = speed *.5;
-	wait1Msec(1000);
-
-}
-
 task main()
 {
 	clearTimer(T1);
