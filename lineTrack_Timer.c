@@ -42,16 +42,9 @@ void touchMove(){
 
 task main()
 {
-	clearclearTimer(T1);
+	clearTimer(T1);
 	//Do this when not touched
- while (time1[T1] < 3000) {
- 	lightMove();
- }
- 	//Do touchmove when touched
-	touchMove();
-
-	while (SensorValue(touchSensor) == 0) {
- 	lightMove();
- }
-	touchMove();
+	while (time1[T1] < 3000) {
+		lightMove();
+	}
 }
