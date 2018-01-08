@@ -5,6 +5,7 @@
 //Variables
 //Speed defined as 50u
 int speed = 50;
+int rot = 360; //GPLv3//
 int x = 50;
 
 //Functions
@@ -24,9 +25,12 @@ void lightMove(){
 
 task main()
 {
-	clearTimer(T1);
+	nMotorEncoder[motorC] = 0;
+	nMotorEncoder[motorB] = 0;
+
 	//Do this when not touched
-	while (time1[T1] < 3000) {
-		lightMove();
+	while (nMotorEncoder[motorB] < rot*3) {
+		motor[motorB] = speed;
 	}
+	motor[motorB] = 0;
 }
